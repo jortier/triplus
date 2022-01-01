@@ -405,7 +405,7 @@ module.exports = {
         include: [
           {
             model: user,
-            attributes: ['nickName', 'region'],
+            attributes: ['nickName', 'region', 'image'],
           },
         ],
         order: [['createdAt', 'ASC']],
@@ -418,6 +418,7 @@ module.exports = {
           userInfoItem['userId'] = userInfo.userId;
           userInfoItem['nickName'] = userInfo['user.nickName'];
           userInfoItem['region'] = userInfo['user.region'];
+          userInfoItem['image'] = userInfo['user.image'];
           userInfoItem['createAt'] = date_fns.format(userInfo['createdAt'], 'yyyy.MM.dd');
 
           applicant.push(userInfoItem);
